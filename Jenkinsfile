@@ -3,12 +3,14 @@ pipeline {
            stages {
                 stage("Build") {
                       steps {
-				when (params.BuildTool == "Maven") {
+			      script {
+				if (params.BuildTool == "Maven") {
                             		echo 'Maven build finished'
 				}
-                    		when (params.BuildTool == "Gradle") {
+                    		if (params.BuildTool == "Gradle") {
                             		echo 'Gradle build finished'
 				}
+			      }
                       }           
                 }
            }
