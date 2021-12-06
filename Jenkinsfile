@@ -1,19 +1,19 @@
 pipeline {
            agent any
            stages {
-                stage("Maven Build") {
-                      when {
+                when {
                           expression { params.BuildTool == "Maven" }
                       }
+                      
+                stage("Maven Build") {
                       steps {
                           echo 'Maven build end'
                       }           
                 }
-                      
-                stage("Gradle Build") {
-                      when {
+                when {
                           expression { params.BuildTool == "Gradle" }
                       }
+                stage("Gradle Build") {
                       steps {
                           echo 'Gradle build end'
                       }           
