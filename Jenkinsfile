@@ -8,9 +8,9 @@ pipeline {
                         		stage ('Build Stage') {
                             		sh 'Maven build finished'
                         		}}
-                    		if (false) {
-                       		stage ('Stage 2') {
-                            		sh 'echo Stage 2'
+                    		if (params.BuildTool == "Gradle") {
+                       		stage ('Build Stage') {
+                            		sh 'Gradle build finished'
                         		}}
                     	}
                       }           
